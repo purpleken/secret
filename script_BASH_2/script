@@ -1,0 +1,156 @@
+!#/bin/bash
+#=============================================
+
+echo "your directory is"
+pwd
+
+echo "File list"
+ls                                           
+                                             
+echo your "username is"                     
+whoami                                       
+                                             
+#=============================================
+echo your "\$1___username is: $USER ______"
+
+echo ===========================================
+
+FML=37
+FineMyLogic="No logic"
+#:'D 
+
+echo "my number is: $FML  and $FineMyLogic"
+
+echo ===========================================
+
+mydir=`pwd`
+
+echo "$mydir"
+
+#math
+v1=$((5 + 5))
+echo $v1
+v2=$(($v1 * 2))
+echo $v2
+
+# IF then
+
+user="purpleken"
+if grep $user /etc/passwd
+then
+echo "The user $user Exists"
+else
+echo "The user $user doesn’t exist"
+fi
+
+#=============================
+
+val1=5
+if [ $val1 -gt 5 ]
+then
+echo "The test value $val1 is greater than 5"
+else
+echo "The test value $val1 is not greater than 5"
+fi
+
+#=================================
+if [ $user = $USER ]
+then
+echo "the $user is the current logged in user"
+else
+echo "No logged ken"
+fi
+#================================
+
+val1=Likegeeks
+val2=likegeeks
+if [ $val1 \> $val2 ]
+then
+echo "$val1 is greater than $val2"
+else
+echo "$val1 is less than $val2"
+fi
+#----------------------------------
+mydir=/home/likegeeks
+if [ -d $mydir ]
+then
+echo "The $mydir directory exists"
+cd $ mydir
+ls
+else
+echo "The $mydir directory does not exist"
+fi
+#ЦИКЛЫ!
+
+for var in first "second krya" third fourth "fifth $USER"
+do
+echo The  $var item
+done
+
+file="textt.txt"
+for var in $(cat $file)
+do
+echo "$var"
+done
+
+for file in /home/purpleken/*
+do
+if [ -d "$file" ]
+then
+echo "$file is a directory"
+elif [ -f "$file" ]
+then
+echo "file is a file"
+fi
+done
+#========================= лень писать это
+
+var11=5
+while [ $var11 -gt 0 ]
+do
+echo $var11
+var11=$[ $var11 - 1 ]
+done
+
+var12=1
+while [ $var12 -lt 10 ]
+do
+if [ $var12 -eq 5 ]
+then
+break
+
+fi
+echo "Iteration: $var12";
+var12=$(( $var12 + 1 ))
+done
+
+
+for (( var13 = 1; var13 < 15; var13++ ))
+do
+if [ $var13 -gt 5 ] && [ $var13 -lt 10 ]
+then
+continue
+fi
+echo "Iteration number: $var13"
+done
+#===================================
+
+echo $0
+echo $1
+echo $2
+echo $3
+
+echo
+while [ -n "$1" ]
+do
+case "$1" in
+-a) echo "Found the -a option" ;;
+-b) echo "Found the -b option" ;;
+-c) echo "Found the -c option" ;;
+*) echo "$1 is not an option" ;;
+esac
+shift
+done
+
+
+
